@@ -29,8 +29,8 @@ public class FlinkReadKafkaSASL {
             // keytool -keystore eventador_truststore.jks -alias CARoot -import -file xxxx-ca-cert.pem -storepass YOUR_PASSWORD -noprompt
             // Be sure to note the password you protect your truststore with, and pass it to your
             // job in the --truststore.password argument.
-            ClassLoader classLoader = FlinkReadKafkaSASL.class.getClassLoader();
-            String truststore_path = classLoader.getResource("eventador_truststore.jks").getPath();
+            //ClassLoader classLoader = FlinkReadKafkaSASL.class.getClassLoader();
+            //String truststore_path = classLoader.getResource("eventador_truststore.jks").getPath();
 
             // Configure ScramLogin via jaas
             String module = "org.apache.kafka.common.security.scram.ScramLoginModule";
