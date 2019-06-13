@@ -16,8 +16,8 @@ public class FlinkReadKafkaSASL {
             // Read parameters from command line
             final ParameterTool params = ParameterTool.fromArgs(args);
 
-            if(params.getNumberOfParameters() < 6) {
-                System.out.println("\nUsage: FlinkReadKafkaSASL --read-topic <topic> --bootstrap.servers <kafka brokers> --group.id <groupid> --username <username> --password <password> --truststore.password <password>");
+            if(params.getNumberOfParameters() < 5) {
+                System.out.println("\nUsage: FlinkReadKafkaSASL --read-topic <topic> --bootstrap.servers <kafka brokers> --group.id <groupid> --username <username> --password <password>");
                 return;
             }
 
