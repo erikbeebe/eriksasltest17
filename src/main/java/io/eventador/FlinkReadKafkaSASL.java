@@ -21,6 +21,7 @@ public class FlinkReadKafkaSASL {
                 return;
             }
 
+            System.out.println("Lets do this!");
             // Configure ScramLogin via jaas
             String module = "org.apache.kafka.common.security.scram.ScramLoginModule";
             String jaasConfig = String.format("%s required username=\"%s\" password=\"%s\";", module, params.getRequired("username"), params.getRequired("password"));
@@ -29,7 +30,8 @@ public class FlinkReadKafkaSASL {
             Properties kparams = params.getProperties();
             kparams.setProperty("auto.offset.reset", "earliest");
             kparams.setProperty("flink.starting-position", "earliest");
-            kparams.setProperty("group.id", params.getRequired("group.id"));
+            //kparams.setProperty("group.id", params.getRequired("group.id"));
+            kparams.setProperty("group.id", "erik_consumer_" + Double.toString(Math.random()));
             kparams.setProperty("bootstrap.servers", params.getRequired("bootstrap.servers"));;
 
             // SASL parameters
